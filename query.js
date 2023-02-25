@@ -55,7 +55,7 @@ router.get("/film/category/:id", (req, res) => {
         FROM film f
             INNER JOIN film_category fc ON f.film_id = fc.film_id
             INNER JOIN category c ON c.category_id = fc.category_id
-            WHERE c.name = ${id}; 
+            WHERE c.category_id = ${id}; 
     `;
     pool.query(getQuery, (err, result) => {
         if (err) throw err;
